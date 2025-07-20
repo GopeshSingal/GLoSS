@@ -1,0 +1,10 @@
+{
+  "TypeScript": {
+    "definition": "A strongly typed superset of JavaScript.",
+    "link": "https://www.typescriptlang.org/"
+  },
+  "React": {
+    "definition": "A JavaScript library for building user interfaces.",
+    "link": "https://reactjs.org/"
+  }
+}

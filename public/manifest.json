@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "GLoSS",
+  "version": "1.0",
+  "description": "Glossary Lookup of Software & Systems terms (GLoSS)",
+  "permissions": [],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["glossary.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
