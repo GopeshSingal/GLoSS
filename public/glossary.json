@@ -1,82 +1,552 @@
 {
   "TypeScript": {
     "definition": "A strongly typed superset of JavaScript.",
-    "link": "https://www.typescriptlang.org/"
+    "link": "https://www.typescriptlang.org/",
+    "category": "Front end"
   },
   "React": {
     "definition": "A JavaScript library for building user interfaces.",
-    "link": "https://reactjs.org/"
+    "link": "https://reactjs.org/",
+    "category": "Front end"
   },
   "Python": {
     "definition": "A high-level, interpreted programming language known for its readability and versatility.",
-    "link": "https://www.python.org/"
+    "link": "https://www.python.org/",
+    "category": "Front end"
   },
   "Java": {
     "definition": "A widely used, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.",
-    "link": "https://www.java.com/"
+    "link": "https://www.java.com/",
+    "category": "Front end"
   },
   "R": {
     "definition": "A programming language and environment for statistical computing and graphics.",
-    "link": "https://www.r-project.org/"
+    "link": "https://www.r-project.org/",
+    "category": "Front end"
   },
   "JavaScript": {
     "definition": "A versatile, high-level programming language that is one of the core technologies of the web.",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "category": "Front end"
   },
   "Hadoop": {
     "definition": "An open-source framework for distributed storage and processing of large data sets using the MapReduce programming model.",
-    "link": "https://hadoop.apache.org/"
+    "link": "https://hadoop.apache.org/",
+    "category": "Back end"
   },
   "HBase": {
     "definition": "A distributed, scalable, big data store modeled after Google's Bigtable and written in Java.",
-    "link": "https://hbase.apache.org/"
+    "link": "https://hbase.apache.org/",
+    "category": "Back end"
   },
   "Pig": {
     "definition": "A high-level platform for creating MapReduce programs used with Hadoop.",
-    "link": "https://pig.apache.org/"
+    "link": "https://pig.apache.org/",
+    "category": "Back end"
   },
   "MapReduce": {
     "definition": "A programming model and processing technique for distributed computing based on Java, used by Hadoop.",
-    "link": "https://en.wikipedia.org/wiki/MapReduce"
+    "link": "https://en.wikipedia.org/wiki/MapReduce",
+    "category": "Back end"
   },
   "Sawzall": {
     "definition": "A programming language developed by Google for processing large amounts of data.",
-    "link": "https://research.google/pubs/pub62/"
+    "link": "https://research.google/pubs/pub62/",
+    "category": "Back end"
   },
   "Bigtable": {
     "definition": "A distributed storage system for managing structured data, designed to scale to a very large size.",
-    "link": "https://cloud.google.com/bigtable"
+    "link": "https://cloud.google.com/bigtable",
+    "category": "Back end"
   },
   "Hive": {
     "definition": "A data warehouse software project built on top of Hadoop for providing data query and analysis.",
-    "link": "https://hive.apache.org/"
+    "link": "https://hive.apache.org/",
+    "category": "Back end"
   },
   "Spark": {
     "definition": "An open-source unified analytics engine for large-scale data processing.",
-    "link": "https://spark.apache.org/"
+    "link": "https://spark.apache.org/",
+    "category": "Back end"
   },
   "TensorFlow": {
     "definition": "An open-source platform for machine learning developed by Google.",
-    "link": "https://www.tensorflow.org/"
+    "link": "https://www.tensorflow.org/",
+    "category": "Machine Learning"
   },
   "PyTorch": {
     "definition": "An open-source machine learning library based on the Torch library, developed by Facebook's AI Research lab.",
-    "link": "https://pytorch.org/"
+    "link": "https://pytorch.org/",
+    "category": "Machine Learning"
   },
   "Kubernetes": {
     "definition": "An open-source system for automating deployment, scaling, and management of containerized applications.",
-    "link": "https://kubernetes.io/"
+    "link": "https://kubernetes.io/",
+    "category": "DevOps"
   },
   "Terraform": {
     "definition": "An open-source infrastructure as code software tool created by HashiCorp.",
-    "link": "https://www.terraform.io/"
+    "link": "https://www.terraform.io/",
+    "category": "DevOps"
   },
   "Linux": {
     "definition": "An open-source family of Unix-like operating systems based on the Linux kernel.",
-    "link": "https://www.linux.org/"
+    "link": "https://www.linux.org/",
+    "category": "General"
   },
   "Unix": {
     "definition": "A family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix.",
-    "link": "https://en.wikipedia.org/wiki/Unix"
+    "link": "https://en.wikipedia.org/wiki/Unix",
+    "category": "General"
+  },
+  "PTP": {
+    "definition": "Precision Time Protocol, a protocol used to synchronize clocks throughout a computer network.",
+    "link": "https://en.wikipedia.org/wiki/Precision_Time_Protocol",
+    "category": "General"
+  },
+  "RTOS": {
+    "definition": "Real-Time Operating System, an operating system intended to serve real-time application requests.",
+    "link": "https://en.wikipedia.org/wiki/Real-time_operating_system",
+    "category": "General"
+  },
+  "FreeRTOS": {
+    "definition": "An open-source real-time operating system for embedded devices.",
+    "link": "https://www.freertos.org/",
+    "category": "General"
+  },
+  "SafeRTOS": {
+    "definition": "A safety-critical real-time operating system derived from FreeRTOS, designed for use in safety-critical applications.",
+    "link": "https://www.highintegritysystems.com/safertos/",
+    "category": "General"
+  },
+  "SOAP": {
+    "definition": "Simple Object Access Protocol, a messaging protocol for exchanging structured information in web services.",
+    "link": "https://en.wikipedia.org/wiki/SOAP",
+    "category": "General"
+  },
+  "REST": {
+    "definition": "Representational State Transfer, an architectural style for designing networked applications.",
+    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer",
+    "category": "General"
+  },
+  "XML": {
+    "definition": "Extensible Markup Language, a markup language that defines a set of rules for encoding documents in a format readable by both humans and machines.",
+    "link": "https://www.w3.org/XML/",
+    "category": "General"
+  },
+  "JSON": {
+    "definition": "JavaScript Object Notation, a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate.",
+    "link": "https://www.json.org/",
+    "category": "General"
+  },
+  "HTML": {
+    "definition": "HyperText Markup Language, the standard markup language for documents designed to be displayed in a web browser.",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "category": "Front end"
+  },
+  "GraphQL": {
+    "definition": "A query language for APIs and a runtime for executing those queries by using a type system you define for your data.",
+    "link": "https://graphql.org/",
+    "category": "Front end"
+  },
+  "RPC": {
+    "definition": "Remote Procedure Call, a protocol that one program can use to request a service from a program located on another computer in a network.",
+    "link": "https://en.wikipedia.org/wiki/Remote_procedure_call",
+    "category": "General"
+  },
+  "Flutter": {
+    "definition": "An open-source UI software development toolkit created by Google for building natively compiled applications for mobile, web, and desktop from a single codebase.",
+    "link": "https://flutter.dev/",
+    "category": "Mobile Dev"
+  },
+  "Vercel": {
+    "definition": "A cloud platform for static sites and Serverless Functions that enables developers to host websites and web services that deploy instantly, scale automatically, and require no supervision.",
+    "link": "https://vercel.com/",
+    "category": "Cloud"
+  },
+  "Ruby": {
+    "definition": "A dynamic, open-source programming language with a focus on simplicity and productivity.",
+    "link": "https://www.ruby-lang.org/",
+    "category": "Front end"
+  },
+  "SQL": {
+    "definition": "Structured Query Language, a standard programming language for managing and manipulating relational databases.",
+    "link": "https://en.wikipedia.org/wiki/SQL",
+    "category": "Back end"
+  },
+  "Go": {
+    "definition": "An open-source programming language that makes it easy to build simple, reliable, and efficient software. Also known as Golang.",
+    "link": "https://golang.org/",
+    "category": "Back end"
+  },
+  "NodeJS": {
+    "definition": "An open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a web browser.",
+    "link": "https://nodejs.org/",
+    "category": "Back end"
+  },
+  "Git": {
+    "definition": "A distributed version control system for tracking changes in source code during software development.",
+    "link": "https://git-scm.com/",
+    "category": "General"
+  },
+  "Docker": {
+    "definition": "An open-source platform for developing, shipping, and running applications in containers.",
+    "link": "https://www.docker.com/",
+    "category": "DevOps"
+  },
+  "JWT": {
+    "definition": "JSON Web Token, an open standard for securely transmitting information between parties as a JSON object.",
+    "link": "https://jwt.io/",
+    "category": "General"
+  },
+  "Lambda": {
+    "definition": "AWS Lambda, a serverless compute service that runs code in response to events and automatically manages the underlying compute resources.",
+    "link": "https://aws.amazon.com/lambda/",
+    "category": "Cloud"
+  },
+  "MVC": {
+    "definition": "Model-View-Controller, a software design pattern commonly used for developing user interfaces that divides an application into three interconnected components.",
+    "link": "https://en.wikipedia.org/wiki/Model–view–controller",
+    "category": "Front end"
+  },
+  "NPM": {
+    "definition": "Node Package Manager, the default package manager for the JavaScript runtime environment Node.js.",
+    "link": "https://www.npmjs.com/",
+    "category": "Back end"
+  },
+  "NoSQL": {
+    "definition": "A class of database management systems that do not use the traditional relational database model, often used for large sets of distributed data.",
+    "link": "https://en.wikipedia.org/wiki/NoSQL",
+    "category": "Back end"
+  },
+  "OAuth": {
+    "definition": "An open standard for access delegation commonly used for token-based authentication and authorization on the internet.",
+    "link": "https://oauth.net/",
+    "category": "General"
+  },
+  "PaaS": {
+    "definition": "Platform as a Service, a category of cloud computing services that provides a platform allowing customers to develop, run, and manage applications.",
+    "link": "https://en.wikipedia.org/wiki/Platform_as_a_service",
+    "category": "Cloud"
+  },
+  "Redux": {
+    "definition": "An open-source JavaScript library for managing and centralizing application state, commonly used with React.",
+    "link": "https://redux.js.org/",
+    "category": "Front end"
+  },
+  "S3": {
+    "definition": "Amazon Simple Storage Service, an object storage service that offers industry-leading scalability, data availability, security, and performance.",
+    "link": "https://aws.amazon.com/s3/",
+    "category": "Cloud"
+  },
+  "SaaS": {
+    "definition": "Software as a Service, a software distribution model in which applications are hosted by a service provider and made available to customers over the internet.",
+    "link": "https://en.wikipedia.org/wiki/Software_as_a_service",
+    "category": "Cloud"
+  },
+  "SSL/TLS": {
+    "definition": "Secure Sockets Layer and Transport Layer Security, cryptographic protocols designed to provide communications security over a computer network.",
+    "link": "https://en.wikipedia.org/wiki/Transport_Layer_Security",
+    "category": "General"
+  },
+  "WebSocket": {
+    "definition": "A computer communications protocol, providing full-duplex communication channels over a single TCP connection, commonly used in real-time web applications.",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+    "category": "Front end"
+  },
+  "Webpack": {
+    "definition": "An open-source JavaScript module bundler, primarily for JavaScript, but it can transform front-end assets like HTML, CSS, and images if the corresponding loaders are included.",
+    "link": "https://webpack.js.org/",
+    "category": "Front end"
+  },
+  "YAML": {
+    "definition": "YAML Ain't Markup Language, a human-readable data-serialization language often used for configuration files.",
+    "link": "https://yaml.org/",
+    "category": "General"
+  },
+  "BigQuery": {
+    "definition": "A fully-managed, serverless data warehouse that enables scalable analysis over petabytes of data, offered by Google Cloud.",
+    "link": "https://cloud.google.com/bigquery",
+    "category": "Cloud"
+  },
+  "DynamoDB": {
+    "definition": "A fully managed NoSQL database service provided by Amazon Web Services that offers fast and predictable performance with seamless scalability.",
+    "link": "https://aws.amazon.com/dynamodb/",
+    "category": "Cloud"
+  },
+  "Elastic Search": {
+    "definition": "A distributed, RESTful search and analytics engine capable of solving a growing number of use cases, commonly used for log and event data analysis.",
+    "link": "https://www.elastic.co/elasticsearch/",
+    "category": "Back end"
+  },
+  "Grafana": {
+    "definition": "An open-source platform for monitoring and observability, used to query, visualize, alert on, and understand metrics from different data sources.",
+    "link": "https://grafana.com/",
+    "category": "Back end"
+  },
+  "Helm": {
+    "definition": "A package manager for Kubernetes that helps you manage Kubernetes applications.",
+    "link": "https://helm.sh/",
+    "category": "DevOps"
+  },
+  "Kafka": {
+    "definition": "An open-source distributed event streaming platform used for building real-time data pipelines and streaming applications.",
+    "link": "https://kafka.apache.org/",
+    "category": "Back end"
+  },
+  "Kerberos": {
+    "definition": "A network authentication protocol designed to provide strong authentication for client/server applications by using secret-key cryptography.",
+    "link": "https://web.mit.edu/kerberos/",
+    "category": "General"
+  },
+  "MongoDB": {
+    "definition": "A source-available cross-platform document-oriented NoSQL database program, known for its flexibility and scalability.",
+    "link": "https://www.mongodb.com/",
+    "category": "Back end"
+  },
+  "OIDC": {
+    "definition": "OpenID Connect, an authentication protocol based on the OAuth 2.0 family of specifications, used for single sign-on (SSO).",
+    "link": "https://openid.net/connect/",
+    "category": "General"
+  },
+  "PostgreSQL": {
+    "definition": "A powerful, open-source object-relational database system with a strong reputation for reliability, feature robustness, and performance.",
+    "link": "https://www.postgresql.org/",
+    "category": "Back end"
+  },
+  "Prometheus": {
+    "definition": "An open-source systems monitoring and alerting toolkit, designed for reliability and scalability.",
+    "link": "https://prometheus.io/",
+    "category": "Back end"
+  },
+  "RabbitMQ": {
+    "definition": "An open-source message-broker software that implements the Advanced Message Queuing Protocol (AMQP).",
+    "link": "https://www.rabbitmq.com/",
+    "category": "Back end"
+  },
+  "Rust": {
+    "definition": "A multi-paradigm, general-purpose programming language focused on performance and safety, especially safe concurrency.",
+    "link": "https://www.rust-lang.org/",
+    "category": "Back end"
+  },
+  "Tibco EMS": {
+    "definition": "TIBCO Enterprise Message Service, a messaging middleware that simplifies and accelerates the integration and management of data distribution.",
+    "link": "https://www.tibco.com/products/enterprise-message-service",
+    "category": "Back end"
+  },
+  ".NET": {
+    "definition": "A free, cross-platform, open-source developer platform for building many different types of applications, developed by Microsoft.",
+    "link": "https://dotnet.microsoft/",
+    "category": "Back end"
+  },
+  "Airflow": {
+    "definition": "An open-source platform to programmatically author, schedule, and monitor workflows, developed by Apache.",
+    "link": "https://airflow.apache.org/",
+    "category": "Back end"
+  },
+  "Aurora RDS": {
+    "definition": "Amazon Aurora is a MySQL- and PostgreSQL-compatible relational database built for the cloud, part of Amazon RDS (Relational Database Service).",
+    "link": "https://aws.amazon.com/rds/aurora/",
+    "category": "Cloud"
+  },
+  "Chromium": {
+    "definition": "An open-source web browser project that forms the basis for the Chrome web browser.",
+    "link": "https://www.chromium.org/",
+    "category": "Front end"
+  },
+  "Chronicle": {
+    "definition": "A cloud service from Google Cloud for security analytics and threat intelligence.",
+    "link": "https://chronicle.security.google/",
+    "category": "Cloud"
+  },
+  "CSS": {
+    "definition": "Cascading Style Sheets, a style sheet language used for describing the presentation of a document written in HTML or XML.",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    "category": "Front end"
+  },
+  "CUDA": {
+    "definition": "A parallel computing platform and application programming interface (API) model created by NVIDIA, allowing software to use certain types of graphics processing units (GPUs) for general purpose processing.",
+    "link": "https://developer.nvidia.com/cuda-zone",
+    "category": "Back end"
+  },
+  "EC2": {
+    "definition": "Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud.",
+    "link": "https://aws.amazon.com/ec2/",
+    "category": "Cloud"
+  },
+  "FedRAMP": {
+    "definition": "The Federal Risk and Authorization Management Program, a U.S. government-wide program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services.",
+    "link": "https://www.fedramp.gov/",
+    "category": "General"
+  },
+  "Fortran": {
+    "definition": "A general-purpose, compiled imperative programming language that is especially suited to numeric computation and scientific computing.",
+    "link": "https://fortran-lang.org/",
+    "category": "Back end"
+  },
+  "GCP": {
+    "definition": "Google Cloud Platform, a suite of cloud computing services offered by Google.",
+    "link": "https://cloud.google.com/",
+    "category": "Cloud"
+  },
+  "Golang": {
+    "definition": "Another name for Go, an open-source programming language that makes it easy to build simple, reliable, and efficient software.",
+    "link": "https://golang.org/",
+    "category": "Back end"
+  },
+  "Gradle": {
+    "definition": "An open-source build automation tool that is designed to be flexible enough to build almost any type of software.",
+    "link": "https://gradle.org/",
+    "category": "Back end"
+  },
+  "HTML5": {
+    "definition": "The fifth and current major version of the HTML standard, used for structuring and presenting content on the World Wide Web.",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+    "category": "Front end"
+  },
+  "Kotlin": {
+    "definition": "A modern, statically typed programming language that boosts productivity and developer happiness, officially supported for Android development.",
+    "link": "https://kotlinlang.org/",
+    "category": "Back end"
+  },
+  "OpenACC": {
+    "definition": "A user-driven directives-based performance-portable parallel programming model designed for scientists and engineers who want to easily accelerate their code for high-performance computing.",
+    "link": "https://www.openacc.org/",
+    "category": "Back end"
+  },
+  "Pub/Sub": {
+    "definition": "Publish/Subscribe, a messaging pattern where senders (publishers) do not program messages to be sent directly to specific receivers (subscribers). Also refers to Google Cloud Pub/Sub, a messaging service for exchanging event data among applications and services.",
+    "link": "https://cloud.google.com/pubsub",
+    "category": "Back end"
+  },
+  "SAML": {
+    "definition": "Security Assertion Markup Language, an open standard for exchanging authentication and authorization data between parties, in particular, between an identity provider and a service provider.",
+    "link": "https://en.wikipedia.org/wiki/SAML_2.0",
+    "category": "General"
+  },
+  "Spinnaker": {
+    "definition": "An open-source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence.",
+    "link": "https://www.spinnaker.io/",
+    "category": "DevOps"
+  },
+  "VPC": {
+    "definition": "Virtual Private Cloud, a private network within a public cloud environment, such as AWS or GCP, that provides isolation and security for resources.",
+    "link": "https://cloud.google.com/vpc",
+    "category": "Cloud"
+  },
+  "C": {
+    "definition": "A general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion.",
+    "link": "https://en.wikipedia.org/wiki/C_(programming_language)",
+    "category": "General"
+  },
+  "C#": {
+    "definition": "A modern, object-oriented programming language developed by Microsoft as part of its .NET initiative.",
+    "link": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+    "category": "Back end"
+  },
+  "C++": {
+    "definition": "A general-purpose programming language created as an extension of the C programming language, supporting object-oriented, generic, and functional features.",
+    "link": "https://isocpp.org/",
+    "category": "Back end"
+  },
+  "Cassandra": {
+    "definition": "A highly scalable, distributed NoSQL database designed to handle large amounts of data across many commodity servers.",
+    "link": "https://cassandra.apache.org/",
+    "category": "Back end"
+  },
+  "CircleCI": {
+    "definition": "A continuous integration and continuous delivery (CI/CD) platform for automating the build, test, and deployment process.",
+    "link": "https://circleci.com/",
+    "category": "DevOps"
+  },
+  "cuBLAS": {
+    "definition": "A GPU-accelerated library for dense linear algebra, providing BLAS (Basic Linear Algebra Subprograms) on NVIDIA GPUs.",
+    "link": "https://developer.nvidia.com/cublas",
+    "category": "Back end"
+  },
+  "cuDNN": {
+    "definition": "NVIDIA CUDA Deep Neural Network library, a GPU-accelerated library for deep neural networks.",
+    "link": "https://developer.nvidia.com/cudnn",
+    "category": "Back end"
+  },
+  "CUTLASS": {
+    "definition": "CUDA Templates for Linear Algebra Subroutines and Solvers, a collection of CUDA C++ templates for high-performance matrix-multiplication at all levels and scales within CUDA.",
+    "link": "https://github.com/NVIDIA/cutlass",
+    "category": "Back end"
+  },
+  "ECS": {
+    "definition": "Amazon Elastic Container Service, a fully managed container orchestration service that supports Docker containers.",
+    "link": "https://aws.amazon.com/ecs/",
+    "category": "Cloud"
+  },
+  "Elasticsearch": {
+    "definition": "A distributed, RESTful search and analytics engine capable of solving a growing number of use cases, commonly used for log and event data analysis.",
+    "link": "https://www.elastic.co/elasticsearch/",
+    "category": "Back end"
+  },
+  "GitHub": {
+    "definition": "A web-based platform used for version control and collaborative software development using Git.",
+    "link": "https://github.com/",
+    "category": "General"
+  },
+  "HALIDE": {
+    "definition": "An open-source programming language designed to make it easier to write high-performance image and array processing code on modern machines.",
+    "link": "https://halide-lang.org/",
+    "category": "Back end"
+  },
+  "HIP": {
+    "definition": "Heterogeneous-compute Interface for Portability, a C++ runtime API and kernel language that allows developers to create portable applications on AMD and NVIDIA GPUs.",
+    "link": "https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP-GUIDE.html",
+    "category": "Back end"
+  },
+  "IREE": {
+    "definition": "Intermediate Representation Execution Environment, an open-source compiler and runtime for machine learning workloads.",
+    "link": "https://openxla.org/iree/",
+    "category": "Back end"
+  },
+  "LLVM": {
+    "definition": "A collection of modular and reusable compiler and toolchain technologies, used to develop compiler front ends and back ends.",
+    "link": "https://llvm.org/",
+    "category": "Back end"
+  },
+  "MLIR": {
+    "definition": "Multi-Level Intermediate Representation, a compiler infrastructure project intended to provide a common intermediate representation for high-level and low-level code transformations.",
+    "link": "https://mlir.llvm.org/",
+    "category": "Back end"
+  },
+  "OpenCL": {
+    "definition": "Open Computing Language, a framework for writing programs that execute across heterogeneous platforms including CPUs, GPUs, and other processors.",
+    "link": "https://www.khronos.org/opencl/",
+    "category": "Back end"
+  },
+  "OpenMP": {
+    "definition": "An application programming interface (API) that supports multi-platform shared memory multiprocessing programming in C, C++, and Fortran.",
+    "link": "https://www.openmp.org/",
+    "category": "Back end"
+  },
+  "ROCm": {
+    "definition": "Radeon Open Compute, an open-source platform for GPU computing on AMD devices.",
+    "link": "https://rocm.docs.amd.com/en/latest/",
+    "category": "Back end"
+  },
+  "SIMD": {
+    "definition": "Single Instruction, Multiple Data, a class of parallel computers in Flynn's taxonomy, used in processors to perform the same operation on multiple data points simultaneously.",
+    "link": "https://en.wikipedia.org/wiki/SIMD",
+    "category": "Back end"
+  },
+  "Step": {
+    "definition": "A single operation or stage in a process, often used in the context of CI/CD pipelines or workflow automation.",
+    "link": "https://en.wikipedia.org/wiki/Workflow",
+    "category": "DevOps"
+  },
+  "TVM": {
+    "definition": "An open-source machine learning compiler stack for CPUs, GPUs, and specialized accelerators.",
+    "link": "https://tvm.apache.org/",
+    "category": "Back end"
+  },
+  "XLA": {
+    "definition": "Accelerated Linear Algebra, a domain-specific compiler for linear algebra that can accelerate TensorFlow models.",
+    "link": "https://www.tensorflow.org/xla",
+    "category": "Back end"
   }
 }

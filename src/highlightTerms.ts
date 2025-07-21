@@ -1,14 +1,22 @@
 export function highlightTerms(
-  glossary: Record<string, { definition: string; link: string }>,
+  glossary: Record<string, { definition: string; link: string; category?: string }>,
   onHover: (term: string, x: number, y: number) => void,
   onClick: (term: string) => void,
   onLeave: () => void
 ) {
-  const terms = Object.keys(glossary);
+  // Sort terms by length descending to prioritize longer matches (e.g., 'NoSQL' before 'SQL')
+  const terms = Object.keys(glossary).sort((a, b) => b.length - a.length);
   if (terms.length === 0) return;
 
+  // Split terms into alphanumeric and non-alphanumeric
+  const alphanumericTerms = terms.filter(t => /^[A-Za-z0-9]+$/.test(t));
+  const specialTerms = terms.filter(t => !/^[A-Za-z0-9]+$/.test(t));
+
   const escapeRegex = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(`\\b(${terms.map(escapeRegex).join("|")})\\b`, "gi");
+  const alphanumericPattern = alphanumericTerms.length > 0 ? `\\b(${alphanumericTerms.map(escapeRegex).join("|")})\\b` : null;
+  const specialPattern = specialTerms.length > 0 ? `(${specialTerms.map(escapeRegex).join("|")})` : null;
+  const patternString = [alphanumericPattern, specialPattern].filter(Boolean).join("|");
+  const pattern = new RegExp(patternString, "gi");
 
   function addHighlightStyles() {
     if (document.getElementById('gloss-styles')) return;
@@ -16,8 +24,9 @@ export function highlightTerms(
     style.id = 'gloss-styles';
     style.textContent = `
       .gloss-highlighted-term {
-        background-color: #fff3cd !important;
-        border-bottom: 2px solid #ffc107 !important;
+        background-color: #b3e5fc !important;
+        border-bottom: 2px solid #0288d1 !important;
+        color: #222 !important;
         cursor: pointer !important;
         padding: 1px 2px !important;
         border-radius: 2px !important;
@@ -26,7 +35,7 @@ export function highlightTerms(
         z-index: 1 !important;
       }
       .gloss-highlighted-term:hover {
-        background-color: #ffeaa7 !important;
+        filter: brightness(1.1);
       }
     `;
     document.head.appendChild(style);
@@ -78,8 +87,16 @@ export function highlightTerms(
         const originalTerm = terms.find(key => key.toLowerCase() === matchedText.toLowerCase());
         const span = document.createElement('span');
         span.className = 'gloss-highlighted-term';
+        // Add category-based class
+        if (originalTerm) {
+          span.dataset.glossTerm = originalTerm;
+          const category = glossary[originalTerm]?.category;
+          if (category) {
+            const catClass = 'gloss-highlighted-term--' + category.replace(/\s+/g, '-').toLowerCase();
+            span.classList.add(catClass);
+          }
+        }
         span.textContent = matchedText;
-        if (originalTerm) span.dataset.glossTerm = originalTerm;
         span.addEventListener('mouseover', (e) => {
           const mouseEvent = e as MouseEvent;
           if (originalTerm) onHover(originalTerm, mouseEvent.pageX, mouseEvent.pageY);
