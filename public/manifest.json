@@ -3,12 +3,16 @@
   "name": "GLoSS",
   "version": "1.0",
   "description": "Glossary Lookup of Software & Systems terms (GLoSS)",
-  "permissions": [],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GLoSS Bookmarks"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["assets/content.js"],
+      "js": ["src/content.tsx"],
       "run_at": "document_idle"
     }
   ],

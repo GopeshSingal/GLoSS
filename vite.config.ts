@@ -1,19 +1,15 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { crx } from '@crxjs/vite-plugin';
+import manifest from './public/manifest.json';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    crx({ manifest }),
+    react(),
+  ],
   build: {
-    outDir: "dist",
-    rollupOptions: {
-      input: {
-        content: resolve(__dirname, "src/content.tsx"),
-      },
-      output: {
-        entryFileNames: "assets/[name].js",
-        assetFileNames: "assets/[name].[ext]",
-      },
-    },
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
