@@ -4,7 +4,6 @@ import { createRoot } from "react-dom/client";
 function getRootDomain(url: string): string {
   try {
     const u = new URL(url);
-    // Remove subdomains, keep only the root domain
     const parts = u.hostname.split(".");
     if (parts.length > 2) {
       return parts.slice(parts.length - 2).join(".");
@@ -17,9 +16,9 @@ function getRootDomain(url: string): string {
 
 const STORAGE_KEY = "gloss_bookmarks";
 
-const PRIMARY_COLOR = "#2563eb"; // blue-600
-const ACCENT_COLOR = "#22c55e"; // green-500
-const BG_COLOR = "#f8fafc"; // slate-50
+const PRIMARY_COLOR = "#2563eb"; 
+const ACCENT_COLOR = "#22c55e"; 
+const BG_COLOR = "#f8fafc"; 
 const BORDER_RADIUS = "14px";
 const FONT_FAMILY = 'system-ui, Segoe UI, Roboto, Arial, sans-serif';
 
@@ -28,7 +27,6 @@ const Popup: React.FC = () => {
   const [currentRoot, setCurrentRoot] = useState<string>("");
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  // Get current tab's root domain
   useEffect(() => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const url = tabs[0]?.url || "";
@@ -37,7 +35,6 @@ const Popup: React.FC = () => {
     });
   }, []);
 
-  // Load bookmarks
   useEffect(() => {
     chrome.storage.sync.get([STORAGE_KEY], (result) => {
       const list: string[] = result[STORAGE_KEY] || [];
@@ -45,12 +42,10 @@ const Popup: React.FC = () => {
     });
   }, []);
 
-  // Update isBookmarked when bookmarks or currentRoot changes
   useEffect(() => {
     setIsBookmarked(bookmarks.includes(currentRoot));
   }, [bookmarks, currentRoot]);
 
-  // Add or remove bookmark
   const toggleBookmark = () => {
     const updated = isBookmarked
       ? bookmarks.filter((b) => b !== currentRoot)

@@ -24,7 +24,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ x, y, content, visible }) => {
     fontSize: "14px",
     lineHeight: "1.4",
     color: "#333333",
-    pointerEvents: "none", // Prevent tooltip from interfering with clicks
+    pointerEvents: "none",
   };
 
   return (
