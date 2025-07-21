@@ -4,11 +4,10 @@ export function highlightTerms(
   onClick: (term: string) => void,
   onLeave: () => void
 ) {
-  // Sort terms by length descending to prioritize longer matches (e.g., 'NoSQL' before 'SQL')
+  
   const terms = Object.keys(glossary).sort((a, b) => b.length - a.length);
   if (terms.length === 0) return;
 
-  // Split terms into alphanumeric and non-alphanumeric
   const alphanumericTerms = terms.filter(t => /^[A-Za-z0-9]+$/.test(t));
   const specialTerms = terms.filter(t => !/^[A-Za-z0-9]+$/.test(t));
 
