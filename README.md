@@ -1,69 +1,106 @@
-# React + TypeScript + Vite
+# GLoSS - Glossary Lookup of Software & Systems
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Chrome extension that highlights technical terms on web pages and provides definitions with links to learn more.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Automatic Highlighting**: Automatically highlights terms from the glossary on any webpage
+- **Hover Tooltips**: Shows definitions when hovering over highlighted terms
+- **Click to Open Link**: Click on a highlighted term to open the associated link in a new tab
+- **Dynamic Content**: Automatically highlights new content as it's added to the page
+- **Clean Design**: Minimal, non-intrusive highlighting that doesn't interfere with page content
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Build the Extension**:
+   ```bash
+   npm install
+   npm run build
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Load in Chrome**:
+   - Open Chrome and go to `chrome://extensions/`
+   - Enable "Developer mode" (toggle in top right)
+   - Click "Load unpacked"
+   - Select the `dist` folder from this project
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+3. **Test the Extension**:
+   - Open the `test.html` file in your browser
+   - You should see "TypeScript" and "React" highlighted in yellow
+   - Hover over the highlighted terms to see tooltips
+   - Click on highlighted terms to open the links in new tabs
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Usage
+
+### Hover Behavior
+- Hover over any highlighted term to see its definition
+- The tooltip will appear near your cursor
+- Move your mouse away to dismiss the tooltip
+
+### Click to Open Link
+- Click on any highlighted term to open the associated link in a new tab
+- The link will open in a new browser tab/window
+- This is especially useful for learning more about technical terms
+
+### Adding Terms
+To add new terms to the glossary, edit `public/glossary.json`:
+
+```json
+{
+  "TermName": {
+    "definition": "Definition of the term",
+    "link": "https://example.com/learn-more"
+  }
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technical Details
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Architecture
+- **Content Script**: Runs on every webpage to highlight terms
+- **React Components**: Manages tooltip state and rendering
+- **MutationObserver**: Watches for dynamic content changes
+- **Event Handling**: Manages hover, click, and document click events
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Files Structure
 ```
+src/
+├── content.tsx      # Main content script
+├── useTooltip.ts    # React hook for tooltip state
+├── Tooltip.tsx      # Tooltip component
+└── highlightTerms.ts # DOM manipulation and highlighting
+public/
+├── manifest.json    # Chrome extension manifest
+└── glossary.json    # Terms and definitions
+```
+
+### Styling
+- Highlighted terms have a light yellow background with an orange underline
+- Tooltips have a clean white background with subtle shadows
+- All styling is designed to be non-intrusive
+
+## Development
+
+### Building
+```bash
+npm run build
+```
+
+### Development Mode
+```bash
+npm run dev
+```
+
+### Linting
+```bash
+npm run lint
+```
+
+## Browser Compatibility
+
+- Chrome 88+ (Manifest V3)
+- Should work on other Chromium-based browsers (Edge, Brave, etc.)
+
+## License
+
+MIT License - feel free to use and modify as needed.
