@@ -3,11 +3,17 @@
   "name": "GLoSS",
   "version": "1.0",
   "description": "Glossary Lookup of Software & Systems terms (GLoSS)",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "GLoSS Bookmarks"
+    "default_title": "GLoSS Bookmarks",
+    "default_icon": {
+      "128": "glossy_blue_128.png"
+    }
+  },
+  "icons": {
+    "128": "glossy_blue_128.png"
   },
   "content_scripts": [
     {
@@ -16,6 +22,10 @@
       "run_at": "document_idle"
     }
   ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
   "web_accessible_resources": [
     {
       "resources": ["glossary.json"],
