@@ -1,26 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-
-function getRootDomain(url: string): string {
-  try {
-    const u = new URL(url);
-    const parts = u.hostname.split(".");
-    if (parts.length > 2) {
-      return parts.slice(parts.length - 2).join(".");
-    }
-    return u.hostname;
-  } catch {
-    return url;
-  }
-}
-
-const STORAGE_KEY = "gloss_bookmarks";
-
-const PRIMARY_COLOR = "#2563eb"; 
-const ACCENT_COLOR = "#22c55e"; 
-const BG_COLOR = "#f8fafc"; 
-const BORDER_RADIUS = "14px";
-const FONT_FAMILY = 'system-ui, Segoe UI, Roboto, Arial, sans-serif';
+import { getRootDomain } from "./utils";
+import { STORAGE_KEY, PRIMARY_COLOR, ACCENT_COLOR, BG_COLOR, BORDER_RADIUS, FONT_FAMILY } from "./constants";
 
 const Popup: React.FC = () => {
   const [bookmarks, setBookmarks] = useState<string[]>([]);

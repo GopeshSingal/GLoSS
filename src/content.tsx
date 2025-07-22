@@ -3,26 +3,14 @@ import { createRoot } from "react-dom/client";
 import { Tooltip } from "./Tooltip";
 import { useTooltip } from "./useTooltip";
 import { highlightTerms } from "./highlightTerms";
-
-function getRootDomain(url: string): string {
-  try {
-    const u = new URL(url);
-    const parts = u.hostname.split(".");
-    if (parts.length > 2) {
-      return parts.slice(parts.length - 2).join(".");
-    }
-    return u.hostname;
-  } catch {
-    return url;
-  }
-}
-
-const STORAGE_KEY = "gloss_bookmarks";
+import { getRootDomain } from "./utils";
+import { STORAGE_KEY } from "./constants";
+import type { GlossaryTerms } from "./types";
 
 (async function main() {
   try {
     const response = await fetch(chrome.runtime.getURL("glossary.json"));
-    const glossary = await response.json();
+    const glossary: GlossaryTerms = await response.json();
     
     const rootDomain = getRootDomain(window.location.href);
     chrome.storage.sync.get([STORAGE_KEY], (result) => {
