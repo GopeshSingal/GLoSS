@@ -32,39 +32,22 @@ function prepareTerms(glossary: GlossaryTerms): string[] {
 }
 
 function createSearchPattern(terms: string[]): RegExp {
-  const alphanumericTerms = terms.filter(t => /^[A-Za-z0-9]+$/.test(t));
-  const specialTerms = terms.filter(t => !/^[A-Za-z0-9]+$/.test(t));
-
   const escapeRegex = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const alphanumericPattern = alphanumericTerms.length > 0 ? `\\b(${alphanumericTerms.map(escapeRegex).join("|")})\\b` : null;
-  const specialPattern = specialTerms.length > 0 ? `(${specialTerms.map(escapeRegex).join("|")})` : null;
-  const patternString = [alphanumericPattern, specialPattern].filter(Boolean).join("|");
-  
-  return new RegExp(patternString, "gi");
+  const patterns = terms.map(term => {
+    const isAlphanumeric = /^[A-Za-z0-9]+$/.test(term);
+    return isAlphanumeric ? `\\b${escapeRegex(term)}\\b` : escapeRegex(term);
+  });
+  return new RegExp(patterns.join("|"), "gi");
 }
 
 function addHighlightStyles() {
   if (document.getElementById('gloss-styles')) return;
   
-  const style = document.createElement('style');
-  style.id = 'gloss-styles';
-  style.textContent = `
-    .gloss-highlighted-term {
-      background-color: #b3e5fc !important;
-      border-bottom: 2px solid #0288d1 !important;
-      color: #222 !important;
-      cursor: pointer !important;
-      padding: 1px 2px !important;
-      border-radius: 2px !important;
-      transition: background-color 0.2s !important;
-      position: relative !important;
-      z-index: 1 !important;
-    }
-    .gloss-highlighted-term:hover {
-      filter: brightness(1.1);
-    }
-  `;
-  document.head.appendChild(style);
+  const link = document.createElement('link');
+  link.id = 'gloss-styles';
+  link.rel = 'stylesheet';
+  link.href = chrome.runtime.getURL('/styles.css');
+  document.head.appendChild(link);
 }
 
 function unwrapHighlights() {
@@ -129,25 +112,21 @@ function createHighlightedSpan(
     span.dataset.glossTerm = originalTerm;
     const category = glossary[originalTerm]?.category;
     if (category) {
-      const catClass = 'gloss-highlighted-term--' + category.replace(/\s+/g, '-').toLowerCase();
-      span.classList.add(catClass);
+      span.classList.add(`gloss-highlighted-term--${category.replace(/\s+/g, '-').toLowerCase()}`);
     }
   }
   
   span.textContent = matchedText;
   
-  span.addEventListener('mouseover', (e) => {
-    const mouseEvent = e as MouseEvent;
-    if (originalTerm) callbacks.onHover(originalTerm, mouseEvent.pageX, mouseEvent.pageY);
-  });
-  
+  if (originalTerm) {
+    span.addEventListener('mouseover', (e) => callbacks.onHover(originalTerm, e.pageX, e.pageY));
+    span.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      callbacks.onClick(originalTerm);
+    });
+  }
   span.addEventListener('mouseout', callbacks.onLeave);
-  
-  span.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (originalTerm) callbacks.onClick(originalTerm);
-  });
   
   return span;
 }

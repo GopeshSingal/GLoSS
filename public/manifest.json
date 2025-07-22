@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GLoSS",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Glossary Lookup of Software & Systems terms (GLoSS)",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["<all_urls>"],
@@ -12,24 +12,21 @@
       "128": "glossy_blue_128.png"
     }
   },
-  "icons": {
-    "128": "glossy_blue_128.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["src/content.tsx"],
-      "run_at": "document_idle"
-    }
-  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["src/content.tsx"],
+    "css": ["styles.css"],
+    "run_at": "document_idle"
+  }],
   "background": {
     "service_worker": "src/background.ts",
     "type": "module"
   },
-  "web_accessible_resources": [
-    {
-      "resources": ["glossary.json"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  "web_accessible_resources": [{
+    "resources": ["glossary.json", "styles.css"],
+    "matches": ["<all_urls>"]
+  }],
+  "icons": {
+    "128": "glossy_blue_128.png"
+  }
 }
