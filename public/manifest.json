@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "GLoSS",
   "version": "1.0.0",
-  "description": "Glossary Lookup of Software & Systems terms (GLoSS)",
+  "description": "Gopesh's List of Software Skills (GLoSS)",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["<all_urls>"],
   "action": {
